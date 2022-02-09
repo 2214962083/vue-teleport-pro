@@ -1,0 +1,72 @@
+{
+  "name": "vue-teleport-pro",
+  "version": "0.9.1",
+  "description": "use teleport like a pro, supports vue2 and vue3",
+  "author": "XiaoMing <2214962083@qq.com>",
+  "license": "MIT",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.esm.js",
+  "unpkg": "./dist/index.min.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "",
+    "build": "rimraf dist && rollup -c",
+    "lint": "eslint --ext *.ts,.js --fix ./src/* && prettier --list-different --write \"**/*.{ts,js,json}\"",
+    "prepublishOnly": "npm run lint &&npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2214962083/vue-teleport-pro.git"
+  },
+  "keywords": [
+    "elements",
+    "vue",
+    "vue2",
+    "vue3",
+    "teleport",
+    "teleport pro"
+  ],
+  "bugs": {
+    "url": "https://github.com/2214962083/vue-teleport-pro/issues"
+  },
+  "homepage": "https://github.com/2214962083/vue-teleport-pro#readme",
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
+  "peerDependencies": {
+    "vue": "^2.0.0 || >=3.0.0-rc.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.10",
+    "@typescript-eslint/eslint-plugin": "^2.33.0",
+    "@typescript-eslint/parser": "^2.33.0",
+    "@vue/eslint-config-prettier": "6.x",
+    "@vue/eslint-config-standard": "5.x",
+    "@vue/eslint-config-typescript": "^5.0.2",
+    "esbuild": "^0.7.0",
+    "eslint": "^6.0.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-prettier-vue": "^3.0.0-alpha.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-typescript": "^0.14.0",
+    "eslint-plugin-vue": "^7.0.0-beta.2",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.26.3",
+    "rollup-plugin-dts": "^1.4.10",
+    "rollup-plugin-esbuild": "^2.4.2",
+    "typescript": "^4.0.5",
+    "vue": "^3.0.0"
+  }
+}
