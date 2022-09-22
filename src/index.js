@@ -144,6 +144,7 @@ const vm = {
   methods: {
     // 销毁 slotVm 实例
     destroySlotVm() {
+      clearTimeout(this.timeout)
       // 目标元素
       const targetElement = document.querySelector(this.to)
 
@@ -158,7 +159,6 @@ const vm = {
   },
   // vue 2.x 销毁周期钩子
   beforeDestroy() {
-    clearTimeout(this.timeout)
     this.destroySlotVm()
   },
   // vue 3.x 销毁周期钩子
