@@ -27,6 +27,7 @@ const vm = {
     return {
       // 保证每个 teleport 都有唯一的 uuid
       uuid: getUuid(),
+      timeout: 0,
     }
   },
   render(h) {
@@ -116,7 +117,7 @@ const vm = {
     }
 
     // 用 setTimeout 能保证 目标 element 已经渲染完成，也就是下面的 targetElement 有值，这里可以自己优化
-    setTimeout(() => {
+    this.timeout = setTimeout(() => {
       // 目标元素
       const targetElement = document.querySelector($props.to)
 
@@ -143,6 +144,7 @@ const vm = {
   methods: {
     // 销毁 slotVm 实例
     destroySlotVm() {
+      clearTimeout(this.timeout)
       // 目标元素
       const targetElement = document.querySelector(this.to)
 
